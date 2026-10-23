@@ -1,0 +1,30 @@
+[project]
+name = "warehouse-api"
+version = "0.1.0"
+description = "FastAPI Warehouse Management System"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "sqlalchemy>=2.0.30",
+    "psycopg2-binary>=2.9.9",
+    "alembic>=1.13.0",
+    "pydantic>=2.8.0",
+    "pydantic-settings>=2.4.0",
+    "email-validator>=2.2.0",
+    "pyjwt>=2.9.0",
+    "argon2-cffi>=23.1.0",
+    "python-multipart>=0.0.9",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
